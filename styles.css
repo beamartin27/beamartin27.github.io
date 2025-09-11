@@ -1,0 +1,61 @@
+:root{
+  --bg:#0f0f12;
+  --fg:#e9e9ee;
+  --muted:#b9b9c5;
+  --accent:#8a7bff;
+  --card:#16161b;
+  --max:900px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  color:var(--fg);
+  background:linear-gradient(180deg,#0b0b0e, var(--bg));
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+.container{max-width:var(--max);margin:auto;padding:24px}
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden
+}
+.skip-link:focus{left:16px;top:16px;width:auto;height:auto;background:#fff;color:#000;padding:8px;border-radius:6px}
+
+.site-header{
+  border-bottom:1px solid #24242c;
+  background: radial-gradient(1000px 200px at 50% 0, rgba(138,123,255,.15), transparent 70%);
+}
+.site-header h1{margin:0 0 4px 0;font-size:2rem}
+.tagline{margin:0;color:var(--muted)}
+.inline-list{list-style:none;display:flex;gap:16px;padding:12px 0 0;margin:0;flex-wrap:wrap}
+.inline-list a{color:var(--fg);text-decoration:none;border-bottom:1px dashed transparent}
+.inline-list a:hover{border-bottom-color:var(--accent)}
+
+h2{margin-top:36px;border-bottom:1px solid #25252c;padding-bottom:6px}
+.item{margin:18px 0}
+.meta{color:var(--muted);margin:.25rem 0 .5rem}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:0;list-style:none}
+.card{background:var(--card);padding:16px;border-radius:12px;border:1px solid #23232a}
+.card h3{margin-top:0}
+.card a{color:var(--accent);text-decoration:none}
+
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+
+.site-footer{border-top:1px solid #24242c;color:var(--muted)}
+.site-footer small{display:block;text-align:center}
+
+/* links */
+a{color:#d6d3ff}
+a:focus{outline:2px dashed var(--accent);outline-offset:2px}
+
+/* print-friendly */
+@media print{
+  :root{--bg:#fff;--fg:#000;--muted:#333}
+  body{background:#fff;color:#000}
+  .site-header{background:#fff;border:none}
+  .inline-list{display:none}
+  a{color:#000;text-decoration:underline}
+}
