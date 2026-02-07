@@ -1,0 +1,172 @@
+---
+const name = "Beatriz Martín (Bea)";
+const role = "CS & AI @ IE University";
+const tagline = "Cloud/DevOps • ML pipelines • Backend foundations";
+const email = "bmartin.ieu2023@student.ie.edu";
+
+const links = {
+  github: "https://github.com/beamartin27",
+  linkedin: "https://www.linkedin.com/in/beamartin27",
+  cv: "/IEU_CV_Beatriz_Martin.pdf", // luego te digo cómo añadir el PDF
+};
+
+const projects = [
+  {
+    title: "DevOps Job Portal (Azure)",
+    desc: "Full-stack job portal with cloud deployment and CI/CD workflows.",
+    tech: ["Azure", "Docker", "CI/CD", "Full-stack"],
+    href: "https://github.com/beamartin27/DevOps-job-portal",
+  },
+  {
+    title: "TinyLink",
+    desc: "URL shortener API with clean backend structure and persistence.",
+    tech: ["FastAPI", "Python", "SQL", "REST"],
+    href: "https://github.com/beamartin27/tinylink",
+  },
+  {
+    title: "GymClass Booking System",
+    desc: "JavaFX + SQLite desktop app for bookings, roles, and progress tracking.",
+    tech: ["Java", "JavaFX", "SQLite", "OOP"],
+    href: "https://github.com/beamartin27/Gym_Project", // ajusta si tu fork se llama distinto
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{name} — Portfolio</title>
+    <meta name="description" content={`${name} — ${tagline}`} />
+    <style>
+      :root {
+        --bg: #0b0b10;
+        --card: rgba(255,255,255,.06);
+        --border: rgba(255,255,255,.12);
+        --text: rgba(255,255,255,.92);
+        --muted: rgba(255,255,255,.68);
+        --shadow: 0 20px 60px rgba(0,0,0,.35);
+        --radius: 18px;
+      }
+      *{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        color: var(--text);
+        background: radial-gradient(900px 500px at 20% 10%, rgba(255,0,160,.18), transparent 60%),
+                    radial-gradient(800px 500px at 80% 20%, rgba(0,180,255,.16), transparent 55%),
+                    var(--bg);
+      }
+      a{color:inherit; text-decoration:none}
+      .wrap{max-width:1040px; margin:0 auto; padding:54px 22px 70px}
+      .top{
+        display:flex; justify-content:space-between; align-items:flex-start; gap:18px;
+        padding:26px; border:1px solid var(--border); background: var(--card);
+        border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(10px);
+      }
+      .title{font-size:34px; margin:0 0 8px; letter-spacing:-0.02em}
+      .subtitle{margin:0; color:var(--muted); font-size:16px; line-height:1.5}
+      .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+      .chip{
+        padding:8px 12px; border:1px solid var(--border); border-radius:999px;
+        background: rgba(255,255,255,.04); color: var(--muted); font-size:13px;
+      }
+      .cta{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+      .btn{
+        padding:10px 14px; border-radius:12px; border:1px solid var(--border);
+        background: rgba(255,255,255,.06);
+      }
+      .btn.primary{
+        background: linear-gradient(90deg, rgba(255,0,160,.35), rgba(0,180,255,.25));
+        border-color: rgba(255,255,255,.18);
+      }
+      .grid{
+        display:grid; grid-template-columns: repeat(3, 1fr);
+        gap:14px; margin-top:18px;
+      }
+      .card{
+        padding:18px; border:1px solid var(--border); background: rgba(255,255,255,.05);
+        border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,.25);
+        transition: transform .15s ease, background .15s ease;
+      }
+      .card:hover{transform: translateY(-3px); background: rgba(255,255,255,.07)}
+      h2{margin:28px 0 10px; font-size:16px; color: var(--muted); font-weight:600; letter-spacing:.02em}
+      .card h3{margin:0 0 8px; font-size:16px}
+      .card p{margin:0 0 12px; color: var(--muted); font-size:14px; line-height:1.5}
+      .tags{display:flex; flex-wrap:wrap; gap:8px}
+      .tag{font-size:12px; color: var(--muted); border:1px solid var(--border); padding:6px 10px; border-radius:999px}
+      .two{
+        display:grid; grid-template-columns: 1.2fr .8fr; gap:14px; margin-top:14px;
+      }
+      .list{margin:0; padding-left:18px; color: var(--muted); line-height:1.6}
+      footer{margin-top:26px; color: var(--muted); font-size:13px}
+      @media (max-width: 920px){
+        .grid{grid-template-columns: 1fr}
+        .two{grid-template-columns: 1fr}
+        .cta{justify-content:flex-start}
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="wrap">
+      <section class="top">
+        <div>
+          <h1 class="title">{name}</h1>
+          <p class="subtitle"><strong>{role}</strong> — {tagline}</p>
+          <div class="chips">
+            <span class="chip">Python · Java · SQL</span>
+            <span class="chip">Git/Linux · Docker · CI/CD</span>
+            <span class="chip">Azure + AWS Educate (foundations)</span>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href={links.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href={links.cv} target="_blank" rel="noreferrer">Download CV</a>
+        </div>
+      </section>
+
+      <h2>Featured projects</h2>
+      <section class="grid">
+        {projects.map((p) => (
+          <a class="card" href={p.href} target="_blank" rel="noreferrer">
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+            <div class="tags">
+              {p.tech.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          </a>
+        ))}
+      </section>
+
+      <section class="two">
+        <div class="card">
+          <h3>About</h3>
+          <p>
+            Resourceful and analytical CS & AI student focused on shipping end-to-end systems.
+            I enjoy cloud deployments, clean backend design, and ML workflows (preprocessing + evaluation).
+          </p>
+          <p style="margin-top:10px">
+            Currently open to part-time internships (Mar–Jun 2026).
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <ul class="list">
+            <li>Email: <a href={`mailto:${email}`}>{email}</a></li>
+            <li>LinkedIn: <a href={links.linkedin} target="_blank" rel="noreferrer">/in/beamartin27</a></li>
+            <li>GitHub: <a href={links.github} target="_blank" rel="noreferrer">@beamartin27</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        Built with Astro • Hosted on GitHub Pages
+      </footer>
+    </main>
+  </body>
+</html>
+
